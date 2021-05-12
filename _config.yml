@@ -19,8 +19,8 @@ locale                   : "en-US"
 title                    : "Hoon's Blog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "ByoungHoon Lee"
-description              : "An amazing website."
+name                     : "Nuguri"
+description              : "삽질 &  블로그"
 url                      : "https://lee040118.github.io/"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -94,10 +94,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Nuguri"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
+  bio              : "고인물 사이의 뉴비"
+  location         : "South Korea"
   email            :
   links:
     - label: "Email"
@@ -277,6 +277,17 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: # true
+      comments: true
       share: true
       related: true
+ # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+      read_time: false
+      comments: false
+      share: true
+      related: false
