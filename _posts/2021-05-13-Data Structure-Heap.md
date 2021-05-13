@@ -25,4 +25,4 @@ last_modified_at: 2021-05-13T08:06:00-05:00
 
 ## Heapify
 주어진 자료구조에서 힙 성질을 만족하도록 하는 연산을 Heapify라고 한다.
-![heapify](/images/Data Structure-Heap/heapify.png)
+![](/images/Data Structure-Heap/heapify.png)
