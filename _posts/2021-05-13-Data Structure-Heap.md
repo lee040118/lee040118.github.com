@@ -35,10 +35,11 @@ last_modified_at: 2021-05-13T08:06:00-05:00
  - 힙에 새로운 값이 들어오면, 먼저 새로운 노드를 힙의 마지막 노드에 이어서 삽입힌다.
  - 새로운 노드를 부모 노드들과 교환하여 힙의 성질을 만족시킨다.
  
- - ![enter image description here](/image/Data%20Structure-Heap/insertion%20into%20heap.png)
+ ![enter image description here](/images/Data%20Structure-Heap/insertion%20into%20heap.png)
+ 
  
  - C언어에서 Max heap 삽입 연산
- 
+
  `enter code here`
 
 
@@ -52,7 +53,8 @@ last_modified_at: 2021-05-13T08:06:00-05:00
 
  -  heap의 최대값인 root노드에서 삭제 된다.
  - 삭제된 루트 노드에는 heap이 마지막 노드를 가져온다
- - 새로운 루트노드와 자식 노드를 비교하면서 바꾸어준다 ( root노드의 key값이 가장 커야 한다)
+ - 새로운 루트노드와 자식 노드를 비교하면서 바꾸어준다 (root노드의 key값이 가장 커야 한다)
+ 
  - C언어에서의 Max heap 삭제 연산
 
     `enter code`
