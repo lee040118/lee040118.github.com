@@ -56,3 +56,12 @@ last_modified_at: 2021-05-13T08:06:00-05:00
  - C언어에서의 Max heap 삭제 연산
 
     `enter code`
+
+## Time complexity
+
+|  | Unordered linear list | Heap |
+|--|:--:|:--:|
+| Search(Top) | O(n) | O(1) | 
+| Insert(Push) | O(1) | O(log n) |
+| Delete(pop) | O(n) | O(log n) |
+
