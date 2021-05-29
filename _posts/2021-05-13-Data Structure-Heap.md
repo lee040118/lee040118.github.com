@@ -30,6 +30,14 @@ last_modified_at: 2021-05-13T08:06:00-05:00
 * Min heap
   - 부모 노드의 key값이 자식 노드의 key값 보다 작거나 같은 완전 이진 트리
 
+## Heap 선언
+~~~c
+typedef struct {
+    int key;
+} element;
+element heap[MAX_HEAP];
+~~~
+
 ## Insertion into a max heap
 
  1. 힙에 새로운 값이 들어오면, 먼저 새로운 노드를 힙의 마지막 노드에 이어서 삽입힌다.
@@ -40,14 +48,28 @@ last_modified_at: 2021-05-13T08:06:00-05:00
  
  - C언어에서 Max heap 삽입 연산
 
- `enter code here`
+~~~c
+void push(element item, int *n) // n -> 전체 힙 크기
+{
+    int i;
+    if (HEAP_FULL(*n)){
+        fprintf(stderr, "The heap is full/ \n");
+        exit(EXIT_FAILURE);
+    }
+    i = ++(*n);
+    while((i!=1) && (item.key > heap[i/2].key)){ // 새로운 노드의 key값이 부모 노드의 key값보다 작을때 까지 반복
+        heap[i] = heap[i/2];
+        i /= 2;
+    }
+    heap[i] = item;
+}
+~~~
 
 
 ## Heapify
 주어진 자료구조에서 힙 성질을 만족하도록 하는 연산을 Heapify라고 한다.
 
 ![](/images/Data%20Structure-Heap/heapify.png)
-
 
 ## Deletion from a max heap
 
@@ -57,7 +79,30 @@ last_modified_at: 2021-05-13T08:06:00-05:00
  
  - C언어에서의 Max heap 삭제 연산
 
-    `enter code`
+~~~c
+element pop(int *n)
+{
+    int parent, child;
+    element item, temp;
+    if(HEAP_EMPTY(*n)){
+        fprintf(stderr, "The heap is empty\n");
+        exit(EXIT_FAILURE);
+    }
+    item = heap[1];
+    temp = heap[(*n)--];
+    parent = 1;
+    child = 2;
+    while(child<= *n){
+        if ( (child < *n) && (heap[child].key < heap[child +1].key)) child++;
+        if(temp.key >= heap[child].key) break;
+        heap[parent] = heap[child];
+        parent = child;
+        child *= 2;
+    }
+    heap[parent] = temp;
+    return item;
+}
+~~~
 
 ## Time complexity
 
