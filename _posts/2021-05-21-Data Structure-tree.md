@@ -127,20 +127,18 @@ void postorder(treePointer ptr)
 void levelorder(treePointer ptr)
 {
     if(!ptr) return;
-
     push(ptr);
-
     while(!isEmpty())
     {
         ptr = pop();
-        if(ptr){
+        if(ptr)
+        {
           printf("%d\n", ptr->data);
           if(ptr->leftChild)
             push(ptr->leftChild);
           if(ptr->rightChild)
             push(ptr->rightChild);
         }
-      
     }
 }
 ~~~
