@@ -122,23 +122,26 @@ void postorder(treePointer ptr)
 ### Level-order traversal
 - 각 레벨별로 트리를 순회한다.
 - queue를 사용해 각 노드를 push해준다.
+
 ~~~c
 void levelorder(treePointer ptr)
 {
-  if(!ptr) return;
+    if(!ptr) return;
 
-  push(ptr);
-  while(!isEmpty()){
-    ptr = pop();
-    if(ptr){
-      printf("%d\n", ptr->data);
-      if(ptr->leftChild)
-        push(ptr->leftChild);
-      if(ptr->rightChild)
-        push(ptr->rightChild);
+    push(ptr);
+
+    while(!isEmpty())
+    {
+        ptr = pop();
+        if(ptr){
+          printf("%d\n", ptr->data);
+          if(ptr->leftChild)
+            push(ptr->leftChild);
+          if(ptr->rightChild)
+            push(ptr->rightChild);
+        }
+      
     }
-    
-  }
 }
 ~~~
 
